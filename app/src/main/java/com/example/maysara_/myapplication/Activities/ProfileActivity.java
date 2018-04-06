@@ -11,6 +11,11 @@ import android.widget.EditText;
 import com.example.maysara_.myapplication.Controllers.ProfileController;
 import com.example.maysara_.myapplication.Helpers.DialogHelper;
 import com.example.maysara_.myapplication.R;
+import com.facebook.stetho.Stetho;
+import com.facebook.stetho.okhttp3.StethoInterceptor;
+import com.orm.SugarContext;
+
+import okhttp3.OkHttpClient;
 
 
 public class ProfileActivity extends AppCompatActivity {
@@ -25,6 +30,11 @@ public class ProfileActivity extends AppCompatActivity {
             finish();
         }
         setContentView(R.layout.profile_activity);
+        Stetho.initializeWithDefaults(this);
+        new OkHttpClient.Builder()
+                .addNetworkInterceptor(new StethoInterceptor())
+                .build();
+        SugarContext.init(this);
         final EditText name = findViewById(R.id.name);
         final EditText phone = findViewById(R.id.phone);
         Button save = findViewById(R.id.profile_data);

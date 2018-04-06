@@ -1,9 +1,11 @@
 package com.example.maysara_.myapplication.Models;
 
+import com.orm.SugarRecord;
+
 import java.util.Date;
 
-public class Budget {
-    private int id;
+public class Budget  extends SugarRecord{
+
     private String name;
     private Date startDate;
     private Date endDate;
@@ -16,14 +18,6 @@ public class Budget {
         this.endDate = endDate;
         this.startBalance = startBalance;
         this.balance = balance;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {

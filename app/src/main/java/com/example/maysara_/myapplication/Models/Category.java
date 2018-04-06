@@ -1,24 +1,20 @@
 package com.example.maysara_.myapplication.Models;
 
-public class Category {
-    private int id;
+import com.orm.SugarRecord;
+
+public class Category extends SugarRecord {
+
     private String name;
-    private int budget;
+    private Budget budget;
     private int limit;
 
     public Category(String name, int budget, int limit) {
         this.name = name;
-        this.budget = budget;
+        this.budget = Budget.findById(Budget.class,budget);
         this.limit = limit;
     }
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -28,11 +24,11 @@ public class Category {
         this.name = name;
     }
 
-    public int getBudget() {
+    public Budget getBudget() {
         return budget;
     }
 
-    public void setBudget(int budget) {
+    public void setBudget(Budget budget) {
         this.budget = budget;
     }
 

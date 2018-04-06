@@ -1,7 +1,9 @@
 package com.example.maysara_.myapplication.Models;
 
-public class User {
-    private int id;
+import com.orm.SugarRecord;
+
+public class User extends SugarRecord {
+
     private String name;
     private String phoneNumber;
     private int gender;
@@ -12,13 +14,6 @@ public class User {
         this.gender = gender;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

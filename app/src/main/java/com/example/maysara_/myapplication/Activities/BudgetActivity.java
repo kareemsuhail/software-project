@@ -16,9 +16,14 @@ import com.example.maysara_.myapplication.Helpers.DB_Helper;
 import com.example.maysara_.myapplication.Helpers.DialogHelper;
 import com.example.maysara_.myapplication.Models.Budget;
 import com.example.maysara_.myapplication.R;
+import com.facebook.stetho.Stetho;
+import com.facebook.stetho.okhttp3.StethoInterceptor;
+import com.orm.SugarContext;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import okhttp3.OkHttpClient;
 
 public class BudgetActivity extends AppCompatActivity {
 
@@ -36,6 +41,12 @@ public class BudgetActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.budget_layout);
+        // adding remote debug bridge by kareem
+        Stetho.initializeWithDefaults(this);
+        new OkHttpClient.Builder()
+                .addNetworkInterceptor(new StethoInterceptor())
+                .build();
+        SugarContext.init(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Budgets");
         setSupportActionBar(toolbar);

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">cash keeper</string>
     <string name="action_settings">Settings</string>
     <string name="please_enter_your_phone_number">Please Enter Your Phone Number</string>
     <string name="please_enter_your_name">Please Enter Your Name</string>

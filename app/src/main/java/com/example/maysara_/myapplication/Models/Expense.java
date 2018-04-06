@@ -1,28 +1,23 @@
 package com.example.maysara_.myapplication.Models;
 
+import com.orm.SugarRecord;
+
 import java.util.Date;
 
-public class Expense {
-    private int id;
+public class Expense extends SugarRecord {
     private String label;
     private float amount;
-    private int category;
+    private Category category;
     private Date date;
 
     public Expense(String label, float amount, int category, Date date) {
         this.label = label;
         this.amount = amount;
-        this.category = category;
+        this.category = Category.findById(Category.class,category);
         this.date = date;
     }
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getLabel() {
         return label;
@@ -40,12 +35,12 @@ public class Expense {
         this.amount = amount;
     }
 
-    public int getCategory() {
+    public Category getCategory() {
         return category;
     }
 
     public void setCategory(int category) {
-        this.category = category;
+        this.category = Category.findById(Category.class,category);
     }
 
     public Date getDate() {

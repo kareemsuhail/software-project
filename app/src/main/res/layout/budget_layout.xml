@@ -11,13 +11,20 @@
         <android.support.design.widget.AppBarLayout
             android:id="@+id/bar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="?attr/actionBarSize"
             android:theme="@style/AppTheme.AppBarOverlay">
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="45dp"
+                android:layout_height="56dp"
+                android:background="@android:color/holo_blue_light"
+                app:srcCompat="@android:drawable/ic_menu_revert" />
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="1dp"
                 android:background="?attr/colorPrimary"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
@@ -26,8 +33,19 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/budget_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/bar" />
+            android:layout_height="311dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/bar" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="52dp"
+            android:layout_alignBottom="@+id/bar"
+            android:layout_centerHorizontal="true"
+            android:text="My Budgets"
+            android:textColor="@android:color/background_light"
+            android:textSize="30sp" />
     </RelativeLayout>
 
     <android.support.design.widget.FloatingActionButton
